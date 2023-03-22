@@ -1,0 +1,110 @@
+﻿@model GRSYKitapEvi_Model.Models.ViewModels.KitapVM
+
+@{
+    var Title = "Kitap Oluştur";
+}
+
+
+<form method="post">
+    <div class="row p-3 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Kitap.Kitap_Id" />
+        @if (Model.Kitap != null)
+        {
+            //Düzenleme işlemi için başlık
+            Title = "Kitap Düzenle";
+        }
+
+        <div class="col-12 border bottom">
+            <h2 class="text-primary"> @Title </h2>
+        </div>
+
+        <div class="col-8 pt-4">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Kitap.Kitap_Id">Kitap Adı</label>
+                </div>
+
+                <div class="col-8">
+                    <input asp-for="Kitap.KitapAdı" type="text" class="form-control" />
+                    <span asp-validation-for="Kitap.KitapAdı" class="text-danger"></span>
+                </div>
+            </div>
+
+             <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Kitap.ISBN"> ISBN </label>
+                </div>
+
+                <div class="col-8">
+                    <input asp-for="Kitap.ISBN" class="form-control" />
+                    <span asp-validation-for="Kitap.ISBN" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Kitap.Fiyat"> Fiyat </label>
+                </div>
+
+                <div class="col-8">
+                    <input asp-for="Kitap.Fiyat" class="form-control" />
+                    <span asp-validation-for="Kitap.Fiyat" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Kitap.KategoriIdForeign"> Kategori </label>
+                </div>
+
+                <div class="col-8">
+                    @Html.DropDownListFor(a=>a.Kitap.KategoriIdForeign, Model.KategoriListesi, "** Kategori Listesi ** ", new { @class = "form-control"})
+                    <span asp-validation-for="Kitap.KategoriIdForeign" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Kitap.YayınEviIdForeign"> YayınEvi </label>
+                </div>
+
+                <div class="col-8">
+                    @Html.DropDownListFor(a=>a.Kitap.YayınEviIdForeign, Model.YayınEviListesi, "** Yayınevi Listesi ** ", new { @class = "form-control"})
+                    <span asp-validation-for="Kitap.YayınEviIdForeign" class="text-danger"></span>
+                </div>
+            </div>
+
+
+
+       
+
+            <div class="form-group row">
+                <div class="col-4 offset-4">
+                    @if (Model.Kitap == null)
+                    {
+                        <button type="submit" class="btn btn-primary form-control">
+                            Kitap Oluştur
+                        </button>
+                    }
+                    else
+                    {
+                        <button type="submit" class="btn btn-primary form-control">
+                            Kitap Güncelle
+                        </button>
+                    }
+                </div>
+
+                <div class="col-4">
+                    <a asp-action="Index" class="btn btn-success form-control">Listeye Geri Dön</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+@section  Scripts{
+    <partial name="_ValidationScriptsPartial" />
+  }

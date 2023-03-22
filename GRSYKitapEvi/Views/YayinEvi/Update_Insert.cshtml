@@ -1,0 +1,75 @@
+﻿@model GRSYKitapEvi_Model.Models.YayınEvi
+
+@{
+    var Title = "Yayınevi Oluştur";
+}
+
+
+<form method="post">
+    <div class="row p-3 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="YayinEvi_Id" />
+        @if (Model.YayinEvi_Id != 0)
+        {
+            //Düzenleme işlemi için başlık
+            Title = "Yayınevi Düzenle";
+        }
+
+        <div class="col-12 border bottom">
+            <h2 class="text-primary"> @Title </h2>
+        </div>
+
+        <div class="col-8 pt-4">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="YayinEviAdi"></label>
+                </div>
+
+                <div class="col-8">
+                    <input asp-for="YayinEviAdi" class="form-control" />
+                    <span asp-validation-for="YayinEviAdi" class="text-danger"></span>
+                </div>
+            </div>
+
+           
+
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Lokasyon"></label>
+                    </div>
+
+                    <div class="col-8">
+                        <input asp-for="Lokasyon" class="form-control" />
+                        <span asp-validation-for="Lokasyon" class="text-danger"></span>
+                    </div>
+                </div>
+
+            <div class="form-group row">
+                <div class="col-4 offset-4">
+                    @if (Model.YayinEvi_Id != 0)
+                    {
+                        <button type="submit" class="btn btn-primary form-control">
+                            Yayınevi Güncelle
+                        </button>
+                    }
+                    else
+                    {
+                        <button type="submit" class="btn btn-primary form-control">
+                            Yayınevi Oluştur
+                        </button>
+                    }
+                </div>
+            </div>
+
+            <div class="col-4">
+                    <a asp-action="Index" class="btn btn-success form-control">Listeye Geri Dön</a>
+                </div>
+            </>
+        </div>
+
+    </div>
+</form>
+
+@section  Scripts{
+    <partial name="_ValidationScriptsPartial" />
+  }

@@ -1,0 +1,98 @@
+﻿@model IEnumerable<GRSYKitapEvi_Model.Models.Kitap>
+<br />
+<br />
+
+<div class="border p-4 bg-white">
+    <div class="row">
+        <div class="col-9">
+            <h2 class="text-info">Kitap Listesi</h2>
+        </div>
+
+        <div class="col-2">
+            <a asp-action="ABC" class="btn btn-warning form-control">ABC</a>
+        </div>
+
+        <div class="col-3 text-right">
+            <a asp-action="Update_Insert" class="btn btn-info form-control"> Yeni Oluştur  </a>
+        </div>
+
+    </div>
+
+    
+    <br />
+
+    <div>
+        @if (Model.Count() > 0)
+        {
+            <table class="table table-striped border">
+                <tr class="table-secondary">
+                    <th>Kitap Adı</th>
+                    <th>Fiyat</th>
+                    <th>Kategori</th>
+                    <th>Yayınevi</th>
+                    <th></th>
+                </tr>
+
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.KitapAdı
+
+                        </td>
+
+                        <td>
+                            @item.Fiyat
+                        </td>
+
+
+                        <td>
+                            @item.Kategori.KategoriAd
+
+                        </td>
+
+                        <td>
+                            @item.YayınEvi.YayinEviAdi
+
+                        </td>
+                       @*
+                        <td>
+                            @{ var yazarlar=""; }
+                            @foreach (var yzrlr in item.KitaplarYazarlar)
+                            {
+                                yazarlar += yzrlr.Yazar.AdSoyad + ",";
+
+                            }@yazarlar.Trim().TrimEnd(',')
+
+
+                        </td>*@
+                     
+                        <td>
+                            <a class="btn btn-primary text-white" asp-action="Update_Insert" asp-route-Id="@item.Kitap_Id">
+                                Düzenle
+                            </a>
+
+                            <a class="btn btn-info text-white" asp-action="Detaylar" asp-route-Id="@item.Kitap_Id">
+                                Detaylar
+                            </a>
+                            <a class="btn btn-danger text-white" asp-action="Sil" asp-route-Id="@item.Kitap_Id">
+                                Sil
+                            </a>
+
+                            <a class="btn btn-success text-white" asp-action="YazarYonet" asp-route-Id="@item.Kitap_Id">
+                                Yazarlar
+                            </a>
+                        </td>
+
+                    </tr>
+                }
+            </table>
+        }
+
+        else
+        {
+            <p>Listelenecek herhangi bir kitap bulunamadı..</p>
+        }
+    </div>
+</div>

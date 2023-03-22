@@ -1,0 +1,12 @@
+C:\Users\Furkan\source\repos\GRSYKitapEvi\GRSYKitapEvi_Model\bin\Debug\net5.0\GRSYKitapEvi_Model.deps.json
+C:\Users\Furkan\source\repos\GRSYKitapEvi\GRSYKitapEvi_Model\bin\Debug\net5.0\GRSYKitapEvi_Model.dll
+C:\Users\Furkan\source\repos\GRSYKitapEvi\GRSYKitapEvi_Model\bin\Debug\net5.0\GRSYKitapEvi_Model.pdb
+C:\Users\Furkan\source\repos\GRSYKitapEvi\GRSYKitapEvi_Model\obj\Debug\net5.0\GRSYKitapEvi_Model.csproj.AssemblyReference.cache
+C:\Users\Furkan\source\repos\GRSYKitapEvi\GRSYKitapEvi_Model\obj\Debug\net5.0\GRSYKitapEvi_Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Furkan\source\repos\GRSYKitapEvi\GRSYKitapEvi_Model\obj\Debug\net5.0\GRSYKitapEvi_Model.AssemblyInfoInputs.cache
+C:\Users\Furkan\source\repos\GRSYKitapEvi\GRSYKitapEvi_Model\obj\Debug\net5.0\GRSYKitapEvi_Model.AssemblyInfo.cs
+C:\Users\Furkan\source\repos\GRSYKitapEvi\GRSYKitapEvi_Model\obj\Debug\net5.0\GRSYKitapEvi_Model.csproj.CoreCompileInputs.cache
+C:\Users\Furkan\source\repos\GRSYKitapEvi\GRSYKitapEvi_Model\obj\Debug\net5.0\GRSYKitapEvi_Model.dll
+C:\Users\Furkan\source\repos\GRSYKitapEvi\GRSYKitapEvi_Model\obj\Debug\net5.0\refint\GRSYKitapEvi_Model.dll
+C:\Users\Furkan\source\repos\GRSYKitapEvi\GRSYKitapEvi_Model\obj\Debug\net5.0\GRSYKitapEvi_Model.pdb
+C:\Users\Furkan\source\repos\GRSYKitapEvi\GRSYKitapEvi_Model\obj\Debug\net5.0\ref\GRSYKitapEvi_Model.dll

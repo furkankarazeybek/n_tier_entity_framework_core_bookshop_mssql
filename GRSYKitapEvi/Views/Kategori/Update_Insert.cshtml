@@ -1,0 +1,57 @@
+﻿@model GRSYKitapEvi_Model.Models.Kategori
+
+@{
+   var Title= "Kategori Oluştur";
+}
+
+
+<form method="post">
+    <div class="row p-3 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="KategoriId" />
+        @if (Model.KategoriId != 0)
+        {
+            //Düzenleme işlemi için başlık
+            Title = "Kategori Düzenle";
+        }
+
+        <div class="col-12 border bottom">
+            <h2 class="text-primary"> @Title </h2>
+        </div>
+
+        <div class="col-8 pt-4">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="KategoriAd"></label>
+                </div>
+
+                <div class="col-8">
+                    <input asp-for="KategoriAd" class="form-control" />
+                    <span asp-validation-for="KategoriAd" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4 offset-4">
+                    @if (Model.KategoriId != 0)
+                    {
+                        <button type="submit" class="btn btn-primary form-control">Kategori Güncelle
+                        </button>
+                    }
+                    else
+                    {
+                        <button type="submit" class="btn btn-primary form-control">Kategori Oluştur
+                        </button>
+                    }
+                </div>
+
+                <div class="col-4">
+                    <a asp-action="Index" class="btn btn-success form-control">Listeye Geri Dön</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+@section  Scripts{ <partial name="_ValidationScriptsPartial" />  }

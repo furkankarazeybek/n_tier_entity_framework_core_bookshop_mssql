@@ -1,0 +1,74 @@
+﻿@model IEnumerable<GRSYKitapEvi_Model.Models.Kategori>
+<br />
+<br />
+
+<div class="border p-4 bg-white">
+    <div class="row">
+        <div class="col-9">
+            <h2 class="text-info">Kategori Listesi</h2>
+        </div>
+
+        <div class="col-3 text-right">
+            <a asp-action="Update_Insert" class="btn btn-info form-control"> Yeni Oluştur  </a>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-3 text-right">
+            <a asp-action="CokluEkleme3" class="btn btn-success form-control"> Çoklu Ekleme 3  </a>
+        </div>
+
+        <div class="col-3 text-right">
+            <a asp-action="CokluEkleme10" class="btn btn-success form-control"> Çoklu Ekleme 10 </a>
+        </div>
+
+        <div class="col-3 text-right">
+            <a asp-action="CokluSilme3" class="btn btn-danger form-control"> Çoklu Silme 3 </a>
+        </div>
+
+        <div class="col-3 text-right">
+            <a asp-action="CokluSilme10" class="btn btn-danger form-control"> Çoklu Silme 10 </a>
+        </div>
+
+    </div>
+    <br />
+
+    <div>
+        @if (Model.Count() > 0)
+        {
+            <table class="table table-striped border">
+                <tr class="table-secondary">
+                    <th>Kategori Adı</th>
+                    <th></th>
+                </tr>
+          
+
+            @foreach (var item in Model)
+            {
+                <tr> 
+                    <td>
+                        @item.KategoriAd
+                        
+                   </td>
+                   
+                   <td>
+                            <a class="btn btn-primary text-white" asp-action="Update_Insert" asp-route-Id="@item.KategoriId">
+                                Düzenle
+                            </a>
+                            <a class="btn btn-danger text-white" asp-action="Sil" asp-route-Id="@item.KategoriId">
+                                Sil
+                            </a>
+                   </td>
+               
+                </tr>
+            }
+            </table>
+        }
+
+        else
+        {
+            <p>Listelenecek herhangi bir kategori bulunamadı..</p>
+        }
+    </div>
+</div>
